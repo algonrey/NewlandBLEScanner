@@ -8,11 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		ACA908B829CCF0930053D0F0 /* NewlandBLEScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = ACA908B729CCF0930053D0F0 /* NewlandBLEScanner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ACA908C029CCF7DD0053D0F0 /* NewlandBLEScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA908BE29CCF7DD0053D0F0 /* NewlandBLEScanner.swift */; };
+		ACA908C129CCF7DD0053D0F0 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA908BF29CCF7DD0053D0F0 /* Scanner.swift */; };
+		ACA908C329CDC2AD0053D0F0 /* NBSConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA908C229CDC2AD0053D0F0 /* NBSConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ACA908B429CCF0930053D0F0 /* NewlandBLEScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NewlandBLEScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA908B729CCF0930053D0F0 /* NewlandBLEScanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewlandBLEScanner.h; sourceTree = "<group>"; };
+		ACA908BE29CCF7DD0053D0F0 /* NewlandBLEScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewlandBLEScanner.swift; sourceTree = "<group>"; };
+		ACA908BF29CCF7DD0053D0F0 /* Scanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
+		ACA908C229CDC2AD0053D0F0 /* NBSConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBSConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,9 @@
 		ACA908B629CCF0930053D0F0 /* NewlandBLEScanner */ = {
 			isa = PBXGroup;
 			children = (
+				ACA908BE29CCF7DD0053D0F0 /* NewlandBLEScanner.swift */,
+				ACA908BF29CCF7DD0053D0F0 /* Scanner.swift */,
+				ACA908C229CDC2AD0053D0F0 /* NBSConstants.swift */,
 				ACA908B729CCF0930053D0F0 /* NewlandBLEScanner.h */,
 			);
 			path = NewlandBLEScanner;
@@ -93,6 +102,7 @@
 				TargetAttributes = {
 					ACA908B329CCF0930053D0F0 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 					};
 				};
 			};
@@ -129,6 +139,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACA908C329CDC2AD0053D0F0 /* NBSConstants.swift in Sources */,
+				ACA908C029CCF7DD0053D0F0 /* NewlandBLEScanner.swift in Sources */,
+				ACA908C129CCF7DD0053D0F0 /* Scanner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +271,7 @@
 		ACA908BC29CCF0930053D0F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -278,6 +292,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,6 +301,7 @@
 		ACA908BD29CCF0930053D0F0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
