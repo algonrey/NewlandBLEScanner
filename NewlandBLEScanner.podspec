@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  s.source       = { :git => 'https://github.com/algonrey/NewlandBLEScanner.git' :tag => '1.0.0' }
+  s.source       = { :git => 'https://github.com/algonrey/NewlandBLEScanner.git', :tag => '1.0.0' }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
