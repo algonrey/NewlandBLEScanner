@@ -77,11 +77,10 @@ import UIKit
     
     func startScan(){
         
+        self.setStatus(.scanning)
         if let selected = self.selectedDevice() {
-            self.setStatus(.connecting)
             centralManager.connect(selected.peripheral, options: nil)
         }else{
-            self.setStatus(.scanning)
             self.centralManager.scanForPeripherals(withServices: [], options: nil)
         }
     }
@@ -151,6 +150,7 @@ import UIKit
 
     public func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         
+        self.setStatus(.connecting)
         print("-----------------CONNECTED to \(peripheral)-----------------")
         peripheral.delegate = self;
         peripheral.discoverServices(nil)
@@ -269,7 +269,7 @@ import UIKit
         
         if let data = characteristic.value, let str = String(data: data, encoding: .utf8) {
             print(str)
-            self.notifyBarCodeEvent(str)
+            self.notifyBarCodeEvent(str.replacingOccurrences(of: "\r", with: ""))
         }else{
             print("Error on the content of the characteristic.")
         }
@@ -317,13 +317,13 @@ import UIKit
     }
     
     func notifyBLEStatus(){
-        DispatchQueue.main.sync {
+        DispatchQueue.main.async {
             self.statusDelegate?.scannerUpdateStatus(status: self.status)
         }
     }
     
     func notifyBarCodeEvent(_ str:String){
-        DispatchQueue.main.sync {
+        DispatchQueue.main.async {
             self.delegate?.barcodeRead(str: str)
         }
     }
